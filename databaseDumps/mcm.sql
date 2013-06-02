@@ -3,7 +3,7 @@
 -- Server version:               5.5.27 - MySQL Community Server (GPL)
 -- Server OS:                    Win32
 -- HeidiSQL version:             7.0.0.4053
--- Date/time:                    2013-06-02 09:19:31
+-- Date/time:                    2013-06-02 17:41:23
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS `categories` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
--- Dumping data for table mcm.categories: ~4 rows (approximately)
+-- Dumping data for table mcm.categories: ~3 rows (approximately)
 /*!40000 ALTER TABLE `categories` DISABLE KEYS */;
 INSERT INTO `categories` (`id`, `name`) VALUES
 	(0, '- Keine -'),
@@ -67,7 +67,7 @@ CREATE TABLE IF NOT EXISTS `handler_pages` (
 /*!40000 ALTER TABLE `handler_pages` DISABLE KEYS */;
 INSERT INTO `handler_pages` (`id`, `name`, `handler`) VALUES
 	(1, 'Artikel', 'article/show/'),
-	(2, 'Report', 'report/show/');
+	(2, 'Report', 'report/overview/');
 /*!40000 ALTER TABLE `handler_pages` ENABLE KEYS */;
 
 
@@ -84,7 +84,7 @@ CREATE TABLE IF NOT EXISTS `meldungen` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
--- Dumping data for table mcm.meldungen: ~0 rows (approximately)
+-- Dumping data for table mcm.meldungen: ~3 rows (approximately)
 /*!40000 ALTER TABLE `meldungen` DISABLE KEYS */;
 INSERT INTO `meldungen` (`id`, `sort`, `title`, `text`, `categorie_id`, `created_at`, `updated_at`) VALUES
 	(2, 1, 'Meldung 1', 'Hier steht der Text der ersten Meldung!!\r\n\r\nasdasd\r\nasd', 2, '2013-06-01 15:38:16', '2013-06-01 15:39:45'),

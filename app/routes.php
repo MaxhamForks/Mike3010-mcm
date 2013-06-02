@@ -11,17 +11,13 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
-
 Route::get('logout', function() {
 	
 	Auth::logout();
 	return Redirect::to('/');
 });
 
+//admin
 Route::controller('admin', 'AdminController');
 Route::controller('login', 'LoginController');
 Route::controller('users', 'UserController');
@@ -29,15 +25,7 @@ Route::controller('articles', 'AdminArticleController');
 Route::controller('reports', 'AdminReportController');
 Route::controller('meldungen', 'AdminMeldungController');
 
-/*Route::get('test', function() {
-	
-	$article = Article::with('parentArticle')->with('Children')->get();
-	echo "<pre>";
-	var_dump($article);
-	
-	echo "<br><br><br>";
-	
-	$queries = DB::getQueryLog();
-	var_dump($queries);
-	
-});*/
+//client
+Route::controller('article', 'ArticleController');
+Route::controller('report', 'ReportController');
+Route::controller('/', 'ClientController');

@@ -45,11 +45,7 @@
 	<!-- navigation starts-->	
 	<div  id="nav">
 		<ul>			
-			<li>{{ HTML::Link('admin', 'Home') }}</li>
-			<li>{{ HTML::Link('users', 'Benutzer') }}</li>
-			<li>{{ HTML::Link('articles', 'Artikel') }}</li>
-			<li>{{ HTML::Link('reports', 'Reports') }}</li>
-			<li>{{ HTML::Link('meldungen', 'Meldungen') }}</li>
+			{{ Navigation::getNavigation() }}
 		</ul>
 	<!-- navigation ends-->	
 	</div>					
