@@ -18,7 +18,7 @@
 			<th></th>
 			<th></th>
 		</tr>
-		@foreach($meldungen as $meldung)
+		@foreach($meldungs as $meldung)
 		
 			<tr>
 				<td>{{ $meldung->title }}</td>

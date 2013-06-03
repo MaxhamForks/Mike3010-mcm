@@ -1,75 +1,27 @@
 <?php
 
-class AdminMeldungController extends Controller {
+class AdminMeldungController extends AdminBaseController {
 
-	function __construct() {
+	protected function modelName() {
 		
-		$this->beforeFilter('auth');
+		return 'Meldung';
 	}
 	
-	public function getEdit($id) {
+	protected function basePath() {
 		
-		$meldung = Meldung::find($id);
-		
-		return View::make('admin.meldung.editor')->with('meldung', $meldung);
+		return 'meldungen';
 	}
 	
-	public function getCreate() {
+	protected function sortColumn() {
 		
-		return View::make('admin.meldung.editor');
+		return 'sort';
 	}
 	
-	public function getDelete($id) {
+	protected function validationRules() {
 		
-		$meldung = Meldung::find($id);
-		if(isset($meldung)) {
-			$meldung->delete();
-		}
-		
-		return Redirect::to('meldungen');
-	}
-	
-	public function postSave() {
-		
-		$input = Input::all();
-		$validator = Validator::make($input,array(
+		return array(
 			'title' => 'required',
 			'sort' => 'required',
-		));
-		
-		if ($validator->fails())
-		{
-			$messages = $validator->messages()->all(':message<br />');
-			$infoString = '';
-			foreach($messages as $msg) {
-				$infoString .= $msg;
-			}
-				
-			Input::flash();
-			Session::flash('info', $infoString);
- 			return Redirect::to('meldungen/create');
-		}
-		
-		//ändern oder neu?
-		$meldungId = $input['id'];
-		$meldung = Meldung::find($meldungId);
-		
-		if(!isset($meldung)) {
-			$meldung = new Meldung();
-		}
-		
-		$meldung->fill($input);
-		$meldung->save();
-		
-		return Redirect::to('meldungen');
-	}
-	
-	public function getIndex() {
-		
-		$meldungen = Meldung::with('Categorie')->get()->sortBy(function($meldung) {
-			return $meldung->sort;
-		});
-		
-		return View::make('admin.meldung.overview')->with('meldungen', $meldungen);
+		);
 	}
 }

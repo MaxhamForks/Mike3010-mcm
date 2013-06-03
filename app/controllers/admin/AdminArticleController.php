@@ -1,74 +1,26 @@
 <?php
 
-class AdminArticleController extends Controller {
-
-	function __construct() {
-		
-		$this->beforeFilter('auth');
+class AdminArticleController extends AdminBaseController {
+	
+	protected function modelName() {
+	
+		return 'Article';
 	}
 	
-	public function getEdit($id) {
-		
-		$article = Article::find($id);
-		
-		return View::make('admin.article.editor')->with('article', $article);
+	protected function basePath() {
+	
+		return 'articles';
 	}
 	
-	public function getCreate() {
-
-		return View::make('admin.article.editor');
+	protected function sortColumn() {
+	
+		return 'title';
 	}
 	
-	public function getDelete($id) {
-		
-		$article = Article::find($id);
-		if(isset($article)) {
-			$article->delete();
-		}
-		
-		return Redirect::to('users');
-	}
+	protected function validationRules() {
 	
-	public function postSave() {
-		
-		$input = Input::all();
-		$validator = Validator::make($input,array(
+		return array(
 			'title' => 'required',
-		));
-		
-		if ($validator->fails())
-		{
-			$messages = $validator->messages()->all(':message<br />');
-			$infoString = '';
-			foreach($messages as $msg) {
-				$infoString .= $msg;
-			}
-				
-			Input::flash();
-			Session::flash('info', $infoString);
- 			return Redirect::to('articles/create');
-		}
-		
-		//ändern oder neu?
-		$articleId = $input['id'];
-		$article = Article::find($articleId);
-		
-		if(!isset($article)) {
-			$article = new Article();
-		}
-		
-		$article->fill($input);
-		$article->save();
-		
-		return Redirect::to('articles');
-	}
-	
-	public function getIndex() {
-		
-		$articles = Article::with('Categorie')->with('HandlerPage')->get()->sortBy(function($article) {
-			return $article->title;
-		});
-		
-		return View::make('admin.article.overview')->with('articles', $articles);
+		);
 	}
 }
