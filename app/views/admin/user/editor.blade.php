@@ -5,28 +5,28 @@
 	<h2>User Editor</h2>
 			
 	<p>Hier können Sie einen neuen User anlegen!</p>				
-	{{ Form::open(array('url' => 'users/save')) }}
-	{{ Form::hidden('id', isset($user) ? $user->getKey() : '') }}
+	{{ isset($user) ? Form::model($user, array('url' => 'users/save')) : Form::open(array('url' => 'users/save')) }}
+	{{ Form::hidden('id') }}
 		<table>
 			<tr>
 				<td><b>Username</b></td>
 				<td width="20"></td>
-				<td>{{ Form::text('username', isset($user) ? $user->username : '') }}</td>				
+				<td>{{ Form::text('username') }}</td>				
 			</tr>
 			<tr>
 				<td><b>Vorname</b></td>
 				<td width="20"></td>
-				<td>{{ Form::text('vorname', isset($user) ? $user->vorname : '') }}</td>
+				<td>{{ Form::text('vorname') }}</td>
 			</tr>
 			<tr>
 				<td><b>Name</b></td>
 				<td width="20"></td>
-				<td>{{ Form::text('name', isset($user) ? $user->name : '') }}</td>
+				<td>{{ Form::text('name') }}</td>
 			</tr>
 			<tr>
 				<td><b>Email</b></td>
 				<td width="20"></td>
-				<td>{{ Form::text('email', isset($user) ? $user->email : '') }}</td>
+				<td>{{ Form::text('email') }}</td>
 			</tr>
 			<tr>
 				<td><b>Passwort</b></td>

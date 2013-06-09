@@ -14,11 +14,23 @@
 <meta name="googlebot" content="noarchive" />
 
 {{ HTML::style('images/VectorLover.css') }}
+{{ HTML::style('css/smoothness/jquery-ui-1.10.3.custom.css') }}
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
 <script>
 	@yield('script')
+</script>
+
+{{ HTML::script('js/jquery-1.9.1.js') }}
+{{ HTML::script('js/jquery-ui-1.10.3.custom.js') }}
+{{ HTML::script('js/tinymce/tinymce.min.js') }}
+<script type="text/javascript">
+tinymce.init({
+    selector: "textarea",
+    plugins: "linkintern",
+    toolbar: 'linkintern code'
+ });
 </script>
 
 </head>
