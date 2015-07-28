@@ -1,24 +1,29 @@
 <?php
 
-class AdminArticleController extends AdminBaseController {
-	
-	protected function modelName() {
-	
+class AdminArticleController extends AdminBaseController
+{
+
+	protected function modelName()
+	{
+
 		return 'Article';
 	}
-	
-	protected function basePath() {
-	
+
+	protected function basePath()
+	{
+
 		return 'articles';
 	}
-	
-	protected function sortColumn() {
-	
+
+	protected function sortColumn()
+	{
+
 		return 'title';
 	}
-	
-	protected function validationRules() {
-	
+
+	protected function validationRules()
+	{
+
 		return array(
 			'title' => 'required',
 		);

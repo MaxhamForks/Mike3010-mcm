@@ -1,24 +1,29 @@
 <?php
 
-class AdminMeldungController extends AdminBaseController {
+class AdminMeldungController extends AdminBaseController
+{
 
-	protected function modelName() {
-		
+	protected function modelName()
+	{
+
 		return 'Meldung';
 	}
-	
-	protected function basePath() {
-		
+
+	protected function basePath()
+	{
+
 		return 'meldungen';
 	}
-	
-	protected function sortColumn() {
-		
+
+	protected function sortColumn()
+	{
+
 		return 'sort';
 	}
-	
-	protected function validationRules() {
-		
+
+	protected function validationRules()
+	{
+
 		return array(
 			'title' => 'required',
 			'sort' => 'required',

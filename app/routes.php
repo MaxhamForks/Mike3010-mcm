@@ -11,8 +11,8 @@
 |
 */
 
-Route::get('logout', function() {
-	
+Route::get('logout', function () {
+
 	Auth::logout();
 	return Redirect::to('/');
 });

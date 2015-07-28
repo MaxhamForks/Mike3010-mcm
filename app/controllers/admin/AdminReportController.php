@@ -1,24 +1,29 @@
 <?php
 
-class AdminReportController extends AdminBaseController {
-	
-	protected function modelName() {
-	
+class AdminReportController extends AdminBaseController
+{
+
+	protected function modelName()
+	{
+
 		return 'Report';
 	}
-	
-	protected function basePath() {
-	
+
+	protected function basePath()
+	{
+
 		return 'reports';
 	}
-	
-	protected function sortColumn() {
-	
+
+	protected function sortColumn()
+	{
+
 		return 'created_At';
 	}
-	
-	protected function validationRules() {
-	
+
+	protected function validationRules()
+	{
+
 		return array(
 			'title' => 'required',
 		);

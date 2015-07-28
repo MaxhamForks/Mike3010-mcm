@@ -1,24 +1,29 @@
 <?php
 
-class UserController extends AdminBaseController {
-	
-	protected function modelName() {
-	
+class UserController extends AdminBaseController
+{
+
+	protected function modelName()
+	{
+
 		return 'User';
 	}
-	
-	protected function basePath() {
-	
+
+	protected function basePath()
+	{
+
 		return 'users';
 	}
-	
-	protected function sortColumn() {
-	
+
+	protected function sortColumn()
+	{
+
 		return 'title';
 	}
-	
-	protected function validationRules() {
-	
+
+	protected function validationRules()
+	{
+
 		return array(
 			'username' => 'required',
 			'name' => 'required',
@@ -28,14 +33,15 @@ class UserController extends AdminBaseController {
 			'passwordWiederholen' => 'required|same:password',
 		);
 	}
-	
-	public function getIndex() {
-		
+
+	public function getIndex()
+	{
+
 		//custom sortierung, darum überschrieben
-		$users = User::all()->sortBy(function($usr) {
-			return strtolower($usr->name.' '.$usr->vorname);
+		$users = User::all()->sortBy(function ($usr) {
+			return strtolower($usr->name . ' ' . $usr->vorname);
 		});
-		
+
 		return View::make('admin.user.list')->with('users', $users);
 	}
 }

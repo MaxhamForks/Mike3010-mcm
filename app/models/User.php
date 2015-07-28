@@ -1,13 +1,14 @@
 <?php
 
-use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableInterface;
+use Illuminate\Auth\UserInterface;
 
-class User extends Eloquent implements UserInterface, RemindableInterface {
+class User extends Eloquent implements UserInterface, RemindableInterface
+{
 
 	protected $fillable = array('username', 'name', 'vorname', 'email', 'password');
 	protected $guarded = array('id');
-	
+
 	/**
 	 * The database table used by the model.
 	 *

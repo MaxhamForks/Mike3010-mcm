@@ -1,9 +1,11 @@
 <?php
 
-class Categorie extends Eloquent {
+class Categorie extends Eloquent
+{
 
-	public function articles() {
-		
+	public function articles()
+	{
+
 		return $this->hasMany('Article');
 	}
 }
