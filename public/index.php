@@ -1,9 +1,18 @@
 <?php
 
-require __DIR__ . '/../bootstrap/autoload.php';
+// Register The Auto Loader
+require __DIR__.'/../bootstrap/autoload.php';
 
-$app = require_once __DIR__ . '/../bootstrap/start.php';
+// Turn On The Lights
+$app = require_once __DIR__.'/../bootstrap/app.php';
 
-$app->run();
+// Run The Application
+$kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
 
-$app->shutdown();
+$response = $kernel->handle(
+    $request = Illuminate\Http\Request::capture()
+);
+
+$response->send();
+
+$kernel->terminate($request, $response);
