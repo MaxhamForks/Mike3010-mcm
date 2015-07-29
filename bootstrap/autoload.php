@@ -2,19 +2,12 @@
 
 define('LARAVEL_START', microtime(true));
 
+// Register The Composer Auto Loader
+require __DIR__.'/../vendor/autoload.php';
 
-require __DIR__ . '/../vendor/autoload.php';
+// Include The Compiled Class File
+$compiledPath = __DIR__.'/cache/compiled.php';
 
-
-if (file_exists($compiled = __DIR__ . '/compiled.php')) {
-	require $compiled;
-}
-
-
-Patchwork\Utf8\Bootup::initMbstring();
-
-Illuminate\Support\ClassLoader::register();
-
-if (is_dir($workbench = __DIR__ . '/../workbench')) {
-	Illuminate\Workbench\Starter::start($workbench);
+if (file_exists($compiledPath)) {
+    require $compiledPath;
 }
