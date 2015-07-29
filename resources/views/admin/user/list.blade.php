@@ -31,14 +31,14 @@
 				<td width="20"></td>
 				<td>{{ $user->email }}</td>
 				<td width="20"></td>
-				<td>{{ HTML::Link('users/edit/'.$user->getKey(), 'bearbeiten') }}</td>
+				<td>{!! HTML::Link('users/edit/'.$user->getKey(), 'bearbeiten') !!}</td>
 				<td width="20"></td>
-				<td>{{ HTML::Link('users/delete/'.$user->getKey(), 'löschen') }}</td>
+				<td>{!! HTML::Link('users/delete/'.$user->getKey(), 'löschen') !!}</td>
 			</tr>	
 	
 		@endforeach
 	</table>
-	<p style="text-align: right;">{{ HTML::Link('users/create', 'Neuen Benutzer anlegen') }}</p>
+	<p style="text-align: right;">{!! HTML::Link('users/create', 'Neuen Benutzer anlegen') !!}</p>
 @stop
 
 @section('rightSide')

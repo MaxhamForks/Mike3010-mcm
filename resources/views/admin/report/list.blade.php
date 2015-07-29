@@ -23,14 +23,14 @@
 				<td width="20"></td>
 				<td>{{ $report->categorie->name }}</td>
 				<td width="20"></td>
-				<td>{{ HTML::Link('reports/edit/'.$report->getKey(), 'bearbeiten') }}</td>
+				<td>{!! HTML::Link('reports/edit/'.$report->getKey(), 'bearbeiten') !!}</td>
 				<td width="20"></td>
-				<td>{{ HTML::Link('reports/delete/'.$report->getKey(), 'löschen') }}</td>
+				<td>{!! HTML::Link('reports/delete/'.$report->getKey(), 'löschen') !!}</td>
 			</tr>	
 	
 		@endforeach
 	</table>
-	<p style="text-align: right;">{{ HTML::Link('reports/create', 'Neuen Report anlegen') }}</p>
+	<p style="text-align: right;">{!! HTML::Link('reports/create', 'Neuen Report anlegen') !!}</p>
 @stop
 
 @section('rightSide')

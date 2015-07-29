@@ -7,7 +7,7 @@
 	<p>
 		@foreach($reports as $report)
 		
-			{{ HTML::Link('report/show/'.$report->getKey(), $report->title) }} <br />
+			{!! HTML::Link('report/show/'.$report->getKey(), $report->title) !!} <br />
 		
 		@endforeach
 	</p>

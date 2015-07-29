@@ -23,18 +23,18 @@
 			<tr>
 				<td>{{ $article->title }}</td>
 				<td width="20"></td>
-				<td>{{ $article->categorie->name }}</td>
+				<td>{{ $article->categorie?$article->categorie->name:'' }}</td>
 				<td width="20"></td>
 				<td>{{ $article->handlerPage->name }}</td>
 				<td width="20"></td>
-				<td>{{ HTML::Link('articles/edit/'.$article->getKey(), 'bearbeiten') }}</td>
+				<td>{!! HTML::Link('articles/edit/'.$article->getKey(), 'bearbeiten') !!}</td>
 				<td width="20"></td>
-				<td>{{ HTML::Link('articles/delete/'.$article->getKey(), 'löschen') }}</td>
+				<td>{!! HTML::Link('articles/delete/'.$article->getKey(), 'löschen') !!}</td>
 			</tr>	
 	
 		@endforeach
 	</table>
-	<p style="text-align: right;">{{ HTML::Link('articles/create', 'Neuen Artikel anlegen') }}</p>
+	<p style="text-align: right;">{!! HTML::Link('articles/create', 'Neuen Artikel anlegen') !!}</p>
 @stop
 
 @section('rightSide')

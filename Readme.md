@@ -6,4 +6,5 @@ Ein produktiver Einsatz ist bis auf weiteres nicht geplant, es handelt sich mehr
 # Installation
 ```
 composer install
+php artisan key:generate
 ```

@@ -54,6 +54,9 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+		// HTML Provider
+		Illuminate\Html\HtmlServiceProvider::class,
+
     ],
 
     'aliases' => [
@@ -71,7 +74,9 @@ return [
         'Eloquent'  => Illuminate\Database\Eloquent\Model::class,
         'Event'     => Illuminate\Support\Facades\Event::class,
         'File'      => Illuminate\Support\Facades\File::class,
+		'Form'      => Illuminate\Html\FormFacade::class,
         'Hash'      => Illuminate\Support\Facades\Hash::class,
+		'HTML'      => Illuminate\Html\HtmlFacade::class,
         'Input'     => Illuminate\Support\Facades\Input::class,
         'Inspiring' => Illuminate\Foundation\Inspiring::class,
         'Lang'      => Illuminate\Support\Facades\Lang::class,

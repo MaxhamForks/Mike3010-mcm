@@ -13,8 +13,8 @@
 <meta name="robots" content="index, follow, noarchive" />
 <meta name="googlebot" content="noarchive" />
 
-{{ HTML::style('images/VectorLover.css') }}
-{{ HTML::style('css/smoothness/jquery-ui-1.10.3.custom.css') }}
+{!! HTML::style('images/VectorLover.css') !!}
+{!! HTML::style('css/smoothness/jquery-ui-1.10.3.custom.css') !!}
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
@@ -22,9 +22,9 @@
 	@yield('script')
 </script>
 
-{{ HTML::script('js/jquery-1.9.1.js') }}
-{{ HTML::script('js/jquery-ui-1.10.3.custom.js') }}
-{{ HTML::script('js/tinymce/tinymce.min.js') }}
+{!! HTML::script('js/jquery-1.9.1.js') !!}
+{!! HTML::script('js/jquery-ui-1.10.3.custom.js') !!}
+{!! HTML::script('js/tinymce/tinymce.min.js') !!}
 <script type="text/javascript">
 tinymce.init({
     selector: "textarea",
@@ -47,7 +47,7 @@ tinymce.init({
 		
 		<div id="top-menu">
 			<p>	
-				{{ Auth::check() ? HTML::Link('logout', 'Logout') : HTML::Link('login', 'Login') }}							
+				{!! Auth::check() ? HTML::Link('logout', 'Logout') : HTML::Link('login', 'Login') !!}
 			</p>
 		</div>		
 					
@@ -57,11 +57,11 @@ tinymce.init({
 	<!-- navigation starts-->	
 	<div  id="nav">
 		<ul>			
-			<li>{{ HTML::Link('admin', 'Home') }}</li>
-			<li>{{ HTML::Link('users', 'Benutzer') }}</li>
-			<li>{{ HTML::Link('articles', 'Artikel') }}</li>
-			<li>{{ HTML::Link('reports', 'Reports') }}</li>
-			<li>{{ HTML::Link('meldungen', 'Meldungen') }}</li>
+			<li>{!! HTML::Link('admin', 'Home') !!}</li>
+			<li>{!! HTML::Link('users', 'Benutzer') !!}</li>
+			<li>{!! HTML::Link('articles', 'Artikel') !!}</li>
+			<li>{!! HTML::Link('reports', 'Reports') !!}</li>
+			<li>{!! HTML::Link('meldungen', 'Meldungen') !!}</li>
 		</ul>
 	<!-- navigation ends-->	
 	</div>					

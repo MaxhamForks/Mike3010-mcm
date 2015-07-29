@@ -27,14 +27,14 @@
 				<td width="20"></td>
 				<td>{{ $meldung->sort }}</td>
 				<td width="20"></td>
-				<td>{{ HTML::Link('meldungen/edit/'.$meldung->getKey(), 'bearbeiten') }}</td>
+				<td>{!! HTML::Link('meldungen/edit/'.$meldung->getKey(), 'bearbeiten') !!}</td>
 				<td width="20"></td>
-				<td>{{ HTML::Link('meldungen/delete/'.$meldung->getKey(), 'löschen') }}</td>
+				<td>{!! HTML::Link('meldungen/delete/'.$meldung->getKey(), 'löschen') !!}</td>
 			</tr>	
 	
 		@endforeach
 	</table>
-	<p style="text-align: right;">{{ HTML::Link('meldungen/create', 'Neue Meldung anlegen') }}</p>
+	<p style="text-align: right;">{!! HTML::Link('meldungen/create', 'Neue Meldung anlegen') !!}</p>
 @stop
 
 @section('rightSide')

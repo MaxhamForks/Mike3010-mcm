@@ -5,25 +5,25 @@
 	<h2>Login</h2>
 			
 	<p>Bitte loggen Sie sich ein!</p>				
-	{{ Form::open(array('url' => 'login/login')) }}
+	{!! Form::open(array('url' => 'login/login')) !!}
 	
 		<table>
 			<tr>
 				<td>Username</td>
 				<td width="20"></td>
-				<td>{{ Form::text('username') }}</td>
+				<td>{!! Form::text('username') !!}</td>
 			</tr>
 			<tr>
 				<td>Passwort</td>
 				<td width="20"></td>
-				<td>{{ Form::password('password') }}</td>
+				<td>{!! Form::password('password') !!}</td>
 			</tr>
 		</table>
-		{{ Form::submit('Einloggen') }}
+		{!! Form::submit('Einloggen') !!}
 	
-		{{ Session::has('info') ? '<p><span style="color: red;">'.Session::get('info').'</span></p>' : '' }}
+		{!! Session::has('info') ? '<p><span style="color: red;">'.Session::get('info').'</span></p>' : '' !!}
 	
-	{{ Form::close() }}
+	{!! Form::close() !!}
 @stop
 
 @section('rightSide')

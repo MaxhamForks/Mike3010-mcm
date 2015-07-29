@@ -13,7 +13,7 @@
 <meta name="robots" content="index, follow, noarchive" />
 <meta name="googlebot" content="noarchive" />
 
-{{ HTML::style('images/VectorLover.css') }}
+{!! HTML::style('images/VectorLover.css') !!}
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
@@ -35,7 +35,7 @@
 		
 		<div id="top-menu">
 			<p>	
-				{{ Auth::check() ? HTML::Link('logout', 'Logout') : HTML::Link('login', 'Login') }}							
+				{!! Auth::check() ? HTML::Link('logout', 'Logout') : HTML::Link('login', 'Login') !!}
 			</p>
 		</div>		
 					
@@ -45,7 +45,7 @@
 	<!-- navigation starts-->	
 	<div  id="nav">
 		<ul>			
-			{{ Navigation::getNavigation() }}
+			{!! App\Helper\Navigation::getNavigation() !!}
 		</ul>
 	<!-- navigation ends-->	
 	</div>					
