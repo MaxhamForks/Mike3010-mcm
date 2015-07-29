@@ -1,0 +1,16 @@
+{
+  "name": "maxhamforks/mike3010-mcm",
+  "version": "1.0",
+  "description": "Mikes Content Managment",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery-ui": "~1.11.4",
+    "tinymce": "~4.2.2"
+  }
+}
